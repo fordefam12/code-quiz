@@ -6,11 +6,15 @@
     <title>C0d3 9u1z (Quiz)</title>
   </head>
   <body>
+    <!-- create contrast border -->
     <main class="border">
+<!-- track grades and scores -->
       <article class="grade">
+        <button class="view-highscores" id="view">view high scores</button>
         <span id="user=score">0</span>
         <span id="total score">/ 5</span>
       </article>
+      <!-- question area -->
       <article class="insides" id="questions">
         <Figure id="question-text"></Figure>
         <figure class="choices">
@@ -22,11 +26,14 @@
             <!-- true flase buttons -->
             <button class="trueButton"></button>
             <button class="trueButton"></button>
-
         </figure>
       </article>
+      <!-- capitolize text later -->
       <section class="controls">
+        <!-- color button labels -->
         <button class="restart" id="start-over">restart</button>
+        <button class="clear-highscores" id="clear">clear high scores</button>
+        <button class="view-highscores" id="view">view high scores</button>
       </section>
     </main>
     <script src="./script.js"></script>
