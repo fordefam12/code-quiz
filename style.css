@@ -2,6 +2,7 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 1px;
     padding: 0%; 
+
 }
 
 main {
@@ -40,9 +41,6 @@ font-weight: bold;
 }
 #user-score {
     color: blue;
-    justify-content: center;
-    align-items: center;
-
 }
 #total-score {
     color: blue;
@@ -64,5 +62,21 @@ font-weight: bold;
 .hide {
     display:none;
 }
+button {
+    font-size: large;
+    font-weight: bold;
+    box-shadow: 0 3px 9px -2px;
+    background: #a3a3a3;
+    border-radius: 9px;
+    padding: 9px;
+    color: rgb(255, 255, 255);
+    margin: 6px;
+    cursor: pointer;
+}
+button:hover {
+    color: black;
+    padding: 20px;
+}
+
 
 
