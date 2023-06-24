@@ -8,10 +8,11 @@
   <body>
     <main class="border">
       <article class="grade">
-        <span id="user=score"></span>
-        <span id="total score"></span>
+        <span id="user=score">0</span>
+        <span id="total score">/ 5</span>
       </article>
       <article class="insides" id="questions">
+        <Figure id="question-text"></Figure>
         <figure class="choices">
             <!-- answer choices -->
             <button class="buttonOption"></button>
@@ -21,9 +22,12 @@
             <!-- true flase buttons -->
             <button class="trueButton"></button>
             <button class="trueButton"></button>
-            
+
         </figure>
       </article>
+      <section class="controls">
+        <button class="restart" id="start-over">restart</button>
+      </section>
     </main>
     <script src="./script.js"></script>
   </body>
