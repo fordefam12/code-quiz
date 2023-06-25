@@ -36,51 +36,9 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-$(document).ready(function () {
-  displayMyQuestion();
-  $(this).find(".quizmessage").hide();
-  $(this).find(".goBack").attr("disabled", "disabled");
-  timecount();
-  $(this).find(".myanswer").on("click",
-    function () {
-      if (quizDone === false) {
-        if (myQuestion == 0) {
-          return false;
-        }
-        if (myQuestion == 1) {
-          $("goBack").attr("hide", "hide");
-        }
-        myQuestion--;
-        if (myQuestion < questions.length) {
-          displayMyQuestion();
-        }
-      } else {
-        if (veiwAnswers === 3) {
-          return false;
-        }
-        myQuestion = 0;
-        veiwAnswers = 3;
-        viewHighScores();
-      }
- } );
-  $(this).find(".myanswer").on("click",
-    function () {
-      if (quizDone === false) {
-        var val = $("input[type='radio']:checked").val();
-        if (val == undefined) {
-          $(document).find(".message").text("please select an answer");
-		$(document).find("message").show();
-        }
-	//    break
-	   else if(myQuestion<question.length){
-	displayMyQuestion();
-      }
-	 else
-	{displayscore();
-		$('#timeclock').html('quiz time complete!');
-		$("#timer").html("you scored: " rightAnswers + "out of:" + questions.length)
-    };
-	 }
+
+
+
   // function startTest() {
   //   currentQuestion = 0;
   //   questionNum.innerHTML = questions[currentQuestion].question;
@@ -122,7 +80,7 @@ $(document).ready(function () {
   //   score = 0;
   //   UserScores.innerHTML = score;
   //   startQuiz();
-  // }
+	// }
 
   // establish button functions
   const restartButton = document.getElementById("start-over");
@@ -145,4 +103,4 @@ $(document).ready(function () {
   startQuiz.addEventListener("click", start);
   goBack.addEventListener("click", back);
   submitScores.addEventListener("click", submit);
-});
+
