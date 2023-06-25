@@ -93,4 +93,17 @@ button:hover {
     padding: 20px;
 }
 
+header .timer{
+    position: absolute;
+    bottom: 0px;
+    left: 0%;
+    height: 3px;
+    background: aqua;
+}
 
+body header .timer {
+    color: aqua;
+    background: #7c1d77;
+    border:5px solid red
+    
+}

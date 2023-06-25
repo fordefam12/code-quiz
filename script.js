@@ -5,6 +5,14 @@ var quizDone = false;
 var myAnwer = [];
 var c = 180;
 var t;
+var timeValue =15;
+var queCount = 0;
+var queNum = 1;
+var UserScores= 0;
+var countDown;
+var counterLine;
+var widthValue =0;
+
 
 // var currentQuestion = 0;
 // var grade = 0;
@@ -38,7 +46,7 @@ var questions = [
 ];
 
 
-
+function settimer(time)
   // function startTest() {
   //   currentQuestion = 0;
   //   questionNum.innerHTML = questions[currentQuestion].question;
@@ -82,7 +90,7 @@ var questions = [
   //   startQuiz();
 	// }
 
-  // establish button functions
+  // establish button functions;
   const restartButton = document.getElementById("start-over");
   const clearHighSCores = document.getElementById("clear-highscores");
   const viewHighScores = document.getElementById("veiw-highscores");
