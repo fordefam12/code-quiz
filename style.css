@@ -2,7 +2,7 @@
     font-family:Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     margin: 1px;
     padding: 0%; 
-
+background-color: black;
 }
 
 main {
@@ -12,7 +12,7 @@ main {
     display: flex;
     align-items: center;
     justify-content: center;
-
+    transform: translate(15%, -5%) scale(0.9);
 } 
 span {
     display: flex;
@@ -104,14 +104,47 @@ header .timer{
 
 
 body header .timer {
-    color: aqua;
-    background: #7c1d77;
-    border:5px solid red;
+    color: rgb(242, 247, 247);
+    background: #501915;
+    border:2px solid red;
     height: 19px;
-    padding: 0 8px;
+    padding: 0 2px;
     border-radius: 9px;
     display: flex;
     align-items: center;
     justify-content: space-between;
     width: 100px;
+}
+body header .timer .time_left_text {
+    font-weight: 400;
+    font-size: 17px;
+    user-select: none;
+}
+body header .timer .time_sec {
+    font-weight: 500;
+    font-size: 18px;
+    user-select: none;
+    height: 20px;
+    width: 45px;
+    color: aqua;
+    border-radius: 5px;
+    line-height: 30px;
+    text-align: center;
+    background: red;
+    border: 1p solid yellow;
+}
+body header .timer .time_line {
+    position: absolute;
+    bottom: 0px;
+    left: 0px;
+    height: 3px;
+    background: #6d1111;
+}
+#demo {
+    text-align: center;
+    font-size: 60px;
+     border: #eb5904;
+    color: #0a92d1;
+text-decoration: #fffcfc;
+padding: 1px;
 }

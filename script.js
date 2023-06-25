@@ -46,51 +46,6 @@ var questions = [
 ];
 
 
-function settimer(time)
-  // function startTest() {
-  //   currentQuestion = 0;
-  //   questionNum.innerHTML = questions[currentQuestion].question;
-  //   // change button  name goBack.
-  //   trueBtn.innHTML = questions[currentQuestion].answers[0].option;
-  //   trueBtn.onclick = () => {
-  //     var ano = 0;
-  //     if (questions[currentQuestion].answers[ano].answer) {
-  //       if (grade < 3) {
-  //         score++;
-  //       }
-  //     }
-  //     UserScores.innerHTML = score;
-  //     if (currentQuestion < 2) {
-  //       next();
-  //     }
-  //   };
-  // }
-  // falseBtn.HTML = questions[currentQuestion].answers[1].option;
-  // falseBtn.onclick = () => {
-  //   var ano = 1;
-  //   if (questions[currentQuestion].answers[ano].answer) {
-  //     if (grade < 3) {
-  //       score++;
-  //     }
-  //   }
-  //   goBack.classList.add("hide");
-  // };
-  // startQuiz();
-
-  // function restart() {
-  //   currentQuestion = 0;
-  //   goBack.classList.remove("hide");
-  //   trueBtn.classList.remove("hide");
-  //   falseBtn.classList.remove("hide");
-  //   clearHighSCores.classList.remove("hide");
-  //   submitScores.classList.remove("hide");
-  //   startQuiz.classList.remove("hide");
-  //   score = 0;
-  //   UserScores.innerHTML = score;
-  //   startQuiz();
-	// }
-
-  // establish button functions;
   const restartButton = document.getElementById("start-over");
   const clearHighSCores = document.getElementById("clear-highscores");
   const viewHighScores = document.getElementById("veiw-highscores");
@@ -101,6 +56,7 @@ function settimer(time)
   const questionNum = document.getElementById("question-text");
   const trueBtn = document.getElementById("true");
   const falseBtn = document.getElementById("false");
+  const choiceList =document.querySelector(".choiceList");
 
   // establish actions of the click of buttons
 
