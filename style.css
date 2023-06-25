@@ -57,7 +57,7 @@ font-weight: bold;
 }
 .controls {
     padding: 20px;
-    order 4;
+    order: 4
 }
 .message{
     background-color: black;
