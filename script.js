@@ -82,4 +82,26 @@ function startTest() {
     }
 }
 falseBtn.HTML = questions[currentQuestion].answers[1].option
-falseBtn.onclick =( =>{})
+falseBtn.onclick = () =>{
+    var ano=1;
+    if(questions[currentQuestion].answers[ano].answer){
+        if(grade<3){
+                score++;
+            }
+        }
+        goBack.classList.add('hide')
+}
+startQuiz();
+
+function restart() {
+    currentQuestion = 0;
+    goBack.classList.remove('hide');
+    trueBtn.classList.remove('hide');
+    falseBtn.classList.remove('hide');
+    clearHighSCores.classList.remove('hide');
+    submitScores.classList.remove('hide');
+   startQuiz.classList.remove('hide');
+    score = 0
+    UserScores.innerHTML =score;
+    startQuiz();
+}
