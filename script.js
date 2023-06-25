@@ -38,20 +38,32 @@ var questions = [
   },
 ];
 $(document).ready(function()
-{
-displayMyQuestion();
-$(this).find(".quizmessage").hide();
-$(this).find(".goBack").attr('disabled', 'disabled');
-timecount();
-$(this).find(".goBack").attr('hide', 'hide');
-        if(quizDone===false)
-        {
+    {
+        displayMyQuestion();
+        $(this).find(".quizmessage").hide();
+        $(this).find(".goBack").attr('disabled', 'disabled');
+        timecount();
+        $(this).find(".goBack").on("click",function() {
+		
+        	if(quizDone===false)
+     	{
             if(myQuestion==0) {return false;}
             if(myQuestion==1) {$("goBack").attr('hide', 'hide');
         }
-        
-        }
-}
+        myQuestion--;
+        if (myQuestion<questions.length)
+        {displayMyQuestion();
+	   }     
+		}
+		else {
+		if(veiwAnswers===3) {return false;}
+		myQuestion =0;veiwAnswers =3
+		viewHighScores();
+		}  
+	});
+	
+	
+
 
 // function startTest() {
 //   currentQuestion = 0;
@@ -100,24 +112,24 @@ $(this).find(".goBack").attr('hide', 'hide');
 
 
 
-// // establish button functions
-// const restartButton = document.getElementById("start-over");
-// const clearHighSCores = document.getElementById("clear-highscores");
-// const viewHighScores = document.getElementById("veiw-highscores");
-// const startQuiz = document.getElementById("start");
-// const goBack = document.getElementById("back");
-// const submitScores = document.getElementById("submit");
-// const UserScores = document.getElementById("user-score");
-// const questionNum = document.getElementById("question-text");
-// const trueBtn = document.getElementById("true");
-// const falseBtn = document.getElementById("false");
+// establish button functions
+const restartButton = document.getElementById("start-over");
+const clearHighSCores = document.getElementById("clear-highscores");
+const viewHighScores = document.getElementById("veiw-highscores");
+const startQuiz = document.getElementById("start");
+const goBack = document.getElementById("back");
+const submitScores = document.getElementById("submit");
+const UserScores = document.getElementById("user-score");
+const questionNum = document.getElementById("question-text");
+const trueBtn = document.getElementById("true");
+const falseBtn = document.getElementById("false");
 
-// // establish actions of the click of buttons
+// establish actions of the click of buttons
 
-// restartButton.addEventListener("click", restart);
-// clearHighSCores.addEventListener("click", clear - highscores);
-// viewHighScores.addEventListener("click", view - highscores);
-// submitScores.addEventListener("click", submit);
-// startQuiz.addEventListener("click", start);
-// goBack.addEventListener("click", back);
-// submitScores.addEventListener("click", submit);}
+restartButton.addEventListener("click", restart);
+clearHighSCores.addEventListener("click", clear - highscores);
+viewHighScores.addEventListener("click", view - highscores);
+submitScores.addEventListener("click", submit);
+startQuiz.addEventListener("click", start);
+goBack.addEventListener("click", back);
+submitScores.addEventListener("click", submit);
