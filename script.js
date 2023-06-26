@@ -42,14 +42,11 @@ var questions = [
   },
 ];
 function showQuestion (questions) {
-  myQuestion = myQuestion + direction;
-  if (myQuestion < 0) { 
-    myQuestion = questions.length - 1; 
-  } else if (myQuestion > questions.length - 1) { 
-    myQuestion = 0;
-  }
- currentQuestion = questions[0++];
-  console.log(currentQuestion);
+  const question =questions[questionIndex];
+  const $question =document.getElementById("question");
+  const $div =document.createElement("div");
+  const $p =document.createElement("p");
+
 }
  // The data/time we want to countdown to
  var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime();
