@@ -44,7 +44,7 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-
+var countDownDate =
 
   const restartButton = document.getElementById("start-over");
   const clearHighSCores = document.getElementById("clear-highscores");
