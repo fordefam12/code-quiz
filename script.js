@@ -69,9 +69,11 @@ function showQuestion(questionIndex) {
 
   });
 }
+const $nextQuestion = document.getElementById("NextQuestion");
+$nextQuestion.addEventListener("click", function () {
 // The data/time we want to countdown to
 var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime();
-
+state.
 // Run myfunc every second
 var myfunc = setInterval(function () {
   var now = new Date().getTime();
