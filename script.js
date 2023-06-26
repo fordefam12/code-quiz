@@ -41,14 +41,14 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-function navigate(direction) {
+function showQuestion (questions) {
   myQuestion = myQuestion + direction;
   if (myQuestion < 0) { 
     myQuestion = questions.length - 1; 
   } else if (myQuestion > questions.length - 1) { 
     myQuestion = 0;
   }
- currentQuestion = questions[myQuestion];
+ currentQuestion = questions[0++];
   console.log(currentQuestion);
 }
  // The data/time we want to countdown to
