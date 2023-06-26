@@ -79,22 +79,23 @@ var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
  }
  
  }, 1000);
+
 //  console.log( countDownDate);
 
 
-const restartButton = document.getElementById("start-over");
-  const clearHighSCores = document.getElementById("clear-highscores");
-  const viewHighScores = document.getElementById("veiw-highscores");
-  const startQuiz = document.getElementById("start");
-  const goBack = document.getElementById("back");
-  const submitScores = document.getElementById("submit");
-//   const UserScores = document.getElementById("user-score");
-  const questionNum = document.getElementById("question-text");
-  const trueBtn = document.getElementById("true");
-  const falseBtn = document.getElementById("false");
-  const choiceList =document.querySelector(".choiceList");
+// const restartButton = document.getElementById("start-over");
+//   const clearHighSCores = document.getElementById("clear-highscores");
+//   const viewHighScores = document.getElementById("veiw-highscores");
+//   const startQuiz = document.getElementById("start");
+//   const goBack = document.getElementById("back");
+//   const submitScores = document.getElementById("submit");
+// //   const UserScores = document.getElementById("user-score");
+//   const questionNum = document.getElementById("question_text");
+//   const trueBtn = document.getElementById("true");
+//   const falseBtn = document.getElementById("false");
+//   const choiceList =document.querySelector(".choiceList");
   
-  // establish actions of the click of buttons
+//   // establish actions of the click of buttons
 
 //   restartButton.addEventListener("click", restart);
 //   clearHighSCores.addEventListener("click", clear - highscores);
