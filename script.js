@@ -41,7 +41,16 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-
+function navigate(direction) {
+  myQuestion = myQuestion + direction;
+  if (myQuestion < 0) { 
+    myQuestion = questions.length - 1; 
+  } else if (myQuestion > questions.length - 1) { 
+    myQuestion = 0;
+  }
+ currentQuestion = questions[myQuestion];
+  console.log(currentQuestion);
+}
  // The data/time we want to countdown to
  var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime();
     
@@ -73,12 +82,12 @@ var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
 	document.getElementById("mins").innerHTML = ""
 	document.getElementById("secs").innerHTML = ""
 	document.getElementById("end").innerHTML = "TIME UP!!";
- }
- if (timeValue< 0){
-	
+
  }
  
  }, 1000);
+
+ 
 
 //  console.log( countDownDate);
 
@@ -99,7 +108,10 @@ var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
 
 //   restartButton.addEventListener("click", restart);
 //   clearHighSCores.addEventListener("click", clear - highscores);
-//   viewHighScores.addEventListener("click", view - highscores);
+  // viewHighScores.addEventListener("click", viewHighscores){
+
+  // };
+  
 //   submitScores.addEventListener("click", submit);
 //   startQuiz.addEventListener("click", start);
 //   goBack.addEventListener("click", back);
