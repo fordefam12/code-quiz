@@ -5,7 +5,6 @@ var quizDone = false;
 var myAnwer = [];
 var c = 180;
 var t;
-var timeValue =15;
 var queCount = 0;
 var queNum = 1;
 var UserScores= 0;
@@ -48,16 +47,18 @@ var questions = [
     
  // Run myfunc every second
  var myfunc = setInterval(function() {
-
  var now = new Date().getTime();
- var timeleft = countDownDate - now;
+ var timeValue = countDownDate - now;
 	
  // Calculating the days, hours, minutes and seconds left
- var days = Math.floor(timeleft / (10000 * 6000 * 6000 * 24));
- var hours = Math.floor((timeleft % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
- var minutes = Math.floor((timeleft % (10 * 60 * 60)) / (10000 * 60));
- var seconds = Math.floor((timeleft % (1080 * 60)) / 1000);
-	
+//  var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
+//  var hours = Math.floor((timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
+//  var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
+//  var seconds = Math.floor((timeValue % (1080 * 60)) / 1000);
+var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
+var hours = Math.floor((timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
+var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
+var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
  // Result is output to the specific element
  document.getElementById("days").innerHTML = days + "d "
  document.getElementById("hours").innerHTML = hours + "h " 
@@ -65,7 +66,7 @@ var questions = [
  document.getElementById("secs").innerHTML = seconds + "s " 
 	
  // Display the message when countdown is over
- if (timeleft < 0) {
+ if (timeValue < 0) {
 	clearInterval(myfunc);
 	document.getElementById("days").innerHTML = ""
 	document.getElementById("hours").innerHTML = "" 
@@ -73,6 +74,10 @@ var questions = [
 	document.getElementById("secs").innerHTML = ""
 	document.getElementById("end").innerHTML = "TIME UP!!";
  }
+ if (timeValue< 0){
+	
+ }
+ 
  }, 1000);
 //  console.log( countDownDate);
 
