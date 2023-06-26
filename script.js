@@ -73,7 +73,13 @@ const $nextQuestion = document.getElementById("NextQuestion");
 $nextQuestion.addEventListener("click", function () {
 // The data/time we want to countdown to
 var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime();
-state.
+state.currentQuestionIndex +=1;
+if (state.currentQuestionIndex === questions.length){
+  console.log('quizDone:${state.score} / ${questions.length}');
+} else {
+  showQuestion(state.currentQuestionIndex);
+}
+});
 // Run myfunc every second
 var myfunc = setInterval(function () {
   var now = new Date().getTime();
