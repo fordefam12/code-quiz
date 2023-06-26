@@ -116,3 +116,31 @@ var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
 //   startQuiz.addEventListener("click", start);
 //   goBack.addEventListener("click", back);
 //   submitScores.addEventListener("click", submit);
+
+
+
+var questionContainer = document.querySelector("body");
+
+// Listen for any clicks within the img-container div
+questionContainer.addEventListener("click", function(event) {
+  var element = event.target;
+  console.log(element);
+  if (element.matches("view-highscores")) {
+    // Get the current value of the image's data-state attribute
+    var viewHighScores = document.getElementById("veiw-highscores");
+
+    if (state === "still") {
+      // Change the data-state attribute's value
+      // There are two different ways this attribute can be set
+      element.dataset.state = "animate";
+      element.setAttribute("data-state", "animate");
+
+      // Update the image's source to the string being stored in the data-animate attribute
+      element.setAttribute("src", element.dataset.animate);
+    } else {
+      // Change the attributes back to their non-animated values
+      element.dataset.state = "still";
+      element.setAttribute("src", element.dataset.still);
+    }
+  }
+});
