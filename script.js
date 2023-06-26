@@ -44,7 +44,27 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-var countDownDate =
+var countDownDate = new Date().getTime();
+var timeLeft = countDownDate - now;
+var days = math.floor(timeleft / (1000 * 60 * 60* 24));
+var hours = math.floor((timeleft % (1000 * 60 * 60* 24)) / (1000 * 60 * 60));
+var minutes = math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
+var seconds = math.floor((timeleft % (1000 * 60)) / 1000);
+var myfunc =setInterval(function(){
+		const d = new Date();
+		document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+	   
+},1000)
+if (timeleft<0) {
+	clearInterval(myfunc)
+	document.getElementById("days")=""
+	document.getElementById("hours")=""
+	document.getElementById("minutes")=""
+	document.getElementById("seconds")=""
+	document
+
+}
+
 
   const restartButton = document.getElementById("start-over");
   const clearHighSCores = document.getElementById("clear-highscores");
@@ -57,7 +77,10 @@ var countDownDate =
   const trueBtn = document.getElementById("true");
   const falseBtn = document.getElementById("false");
   const choiceList =document.querySelector(".choiceList");
-
+  const days =document.getElementById(days + "d");
+  const hours =document.getElementById(hours + "h");
+  const minutes =document.getElementById(minutes + "m");
+  const seconds =document.getElementById(seconds + "s");
   // establish actions of the click of buttons
 
   restartButton.addEventListener("click", restart);
