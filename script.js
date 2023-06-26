@@ -12,10 +12,8 @@ var UserScores= 0;
 var countDown;
 var counterLine;
 var widthValue =0;
-
-
-// var currentQuestion = 0;
-// var grade = 0;
+var currentQuestion = 0;
+var grade = 0;
 
 var questions = [
   {
@@ -44,50 +42,59 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-var countDownDate = new Date().getTime();
-var timeLeft = countDownDate - now;
-var days = math.floor(timeleft / (1000 * 60 * 60* 24));
-var hours = math.floor((timeleft % (1000 * 60 * 60* 24)) / (1000 * 60 * 60));
-var minutes = math.floor((timeleft % (1000 * 60 * 60)) / (1000 * 60));
-var seconds = math.floor((timeleft % (1000 * 60)) / 1000);
-var myfunc =setInterval(function(){
-		const d = new Date();
-		document.getElementById("demo").innerHTML = d.toLocaleTimeString();
-	   
-},1000)
-if (timeleft<0) {
-	clearInterval(myfunc)
-	document.getElementById("days")=""
-	document.getElementById("hours")=""
-	document.getElementById("minutes")=""
-	document.getElementById("seconds")=""
-	document
 
-}
+ // The data/time we want to countdown to
+ var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime();
+    
+ // Run myfunc every second
+ var myfunc = setInterval(function() {
+
+ var now = new Date().getTime();
+ var timeleft = countDownDate - now;
+	
+ // Calculating the days, hours, minutes and seconds left
+ var days = Math.floor(timeleft / (10000 * 6000 * 6000 * 24));
+ var hours = Math.floor((timeleft % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
+ var minutes = Math.floor((timeleft % (10 * 60 * 60)) / (10000 * 60));
+ var seconds = Math.floor((timeleft % (1080 * 60)) / 1000);
+	
+ // Result is output to the specific element
+ document.getElementById("days").innerHTML = days + "d "
+ document.getElementById("hours").innerHTML = hours + "h " 
+ document.getElementById("mins").innerHTML = minutes + "m " 
+ document.getElementById("secs").innerHTML = seconds + "s " 
+	
+ // Display the message when countdown is over
+ if (timeleft < 0) {
+	clearInterval(myfunc);
+	document.getElementById("days").innerHTML = ""
+	document.getElementById("hours").innerHTML = "" 
+	document.getElementById("mins").innerHTML = ""
+	document.getElementById("secs").innerHTML = ""
+	document.getElementById("end").innerHTML = "TIME UP!!";
+ }
+ }, 1000);
+//  console.log( countDownDate);
 
 
-  const restartButton = document.getElementById("start-over");
+const restartButton = document.getElementById("start-over");
   const clearHighSCores = document.getElementById("clear-highscores");
   const viewHighScores = document.getElementById("veiw-highscores");
   const startQuiz = document.getElementById("start");
   const goBack = document.getElementById("back");
   const submitScores = document.getElementById("submit");
-  const UserScores = document.getElementById("user-score");
+//   const UserScores = document.getElementById("user-score");
   const questionNum = document.getElementById("question-text");
   const trueBtn = document.getElementById("true");
   const falseBtn = document.getElementById("false");
   const choiceList =document.querySelector(".choiceList");
-  const days =document.getElementById(days + "d");
-  const hours =document.getElementById(hours + "h");
-  const minutes =document.getElementById(minutes + "m");
-  const seconds =document.getElementById(seconds + "s");
+  
   // establish actions of the click of buttons
 
-  restartButton.addEventListener("click", restart);
-  clearHighSCores.addEventListener("click", clear - highscores);
-  viewHighScores.addEventListener("click", view - highscores);
-  submitScores.addEventListener("click", submit);
-  startQuiz.addEventListener("click", start);
-  goBack.addEventListener("click", back);
-  submitScores.addEventListener("click", submit);
-
+//   restartButton.addEventListener("click", restart);
+//   clearHighSCores.addEventListener("click", clear - highscores);
+//   viewHighScores.addEventListener("click", view - highscores);
+//   submitScores.addEventListener("click", submit);
+//   startQuiz.addEventListener("click", start);
+//   goBack.addEventListener("click", back);
+//   submitScores.addEventListener("click", submit);
