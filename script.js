@@ -2,7 +2,7 @@ var myQuestion = 0;
 var veiwAnswers = 0;
 var rightAnswers = 0;
 var quizDone = false;
-var myAnwer = [];
+var answers = [];
 var c = 180;
 var t;
 var queCount = 0;
@@ -41,61 +41,28 @@ var questions = [
     correctAnswers: 1,
   },
 ];
-function showQuestion(questionIndex) {
-  const question = questions[questionIndex];
-  const $question = document.getElementById("Question");
-  const $div = document.createElement("div");
-  const $p = document.createElement("p");
 
-  $question.innerHTML = "";
-  $answers.innerHTML = "";
 
-  $question.appendChild($div);
-  $div.appendChild($p);
-  $p.textContent = question.question;
 
-  question.answers.forEach((answer, answerIndex) => {
-    const $input = document.createElement("input");
-    const $label = document.createElement("label");
 
-    $label.appendChild($input);
-    $label.appendChild(document.createTextNode(answer));
-    
-    $input.name ='Question${questionIndex}';
-    $input.type = "radio";
-    $input.value = answerIndex;
-
-    $answers.append($label);
-
-  });
-}
-const $nextQuestion = document.getElementById("NextQuestion");
-$nextQuestion.addEventListener("click", function () {
 // The data/time we want to countdown to
-var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime();
-state.currentQuestionIndex +=1;
-if (state.currentQuestionIndex === questions.length){
-  console.log('quizDone:${state.score} / ${questions.length}');
-} else {
-  showQuestion(state.currentQuestionIndex);
-}
-});
+var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime()
 // Run myfunc every second
 var myfunc = setInterval(function () {
   var now = new Date().getTime();
   var timeValue = countDownDate - now;
 
   // Calculating the days, hours, minutes and seconds left
-  //  var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
-  //  var hours = Math.floor((timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
-  //  var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
-  //  var seconds = Math.floor((timeValue % (1080 * 60)) / 1000);
-  var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
-  var hours = Math.floor(
-    (timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60)
-  );
-  var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
-  var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
+   var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
+   var hours = Math.floor((timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
+   var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
+   var seconds = Math.floor((timeValue % (1080 * 60)) / 1000);
+  // var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
+  // var hours = Math.floor(
+  //   (timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60)
+  // );
+  // var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
+  // var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
   // Result is output to the specific element
   document.getElementById("days").innerHTML = days + "d ";
   document.getElementById("hours").innerHTML = hours + "h ";
@@ -114,6 +81,14 @@ var myfunc = setInterval(function () {
 }, 1000);
 
 //  console.log( countDownDate);
+// const start_btn = document.querySelector(".start");
+// const message = document.querySelector(".message");
+// const exit_btn = message.querySelector(".buttons .quit");
+// const continue_btn = message.querySelector(".buttons .restart");
+// const quiz_box = document.querySelector(".quiz_box");
+// const result_box = document.querySelector(".result");
+// const option_list = document.querySelector(".choiceList");
+
 
 // const restartButton = document.getElementById("start-over");
 //   const clearHighSCores = document.getElementById("clear-highscores");
@@ -131,7 +106,7 @@ var myfunc = setInterval(function () {
 
 //   restartButton.addEventListener("click", restart);
 //   clearHighSCores.addEventListener("click", clear - highscores);
-// viewHighScores.addEventListener("click", viewHighscores){
+// viewHighScores.addEventListener("click", viewHighScores){
 
 // };
 
