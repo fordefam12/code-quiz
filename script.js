@@ -127,7 +127,12 @@ else{
   hideSore();
 }
 });
-
+//  creating timer
+function timedCount() {
+  if(c==185)
+  {return false;}
+  var 
+}
 });
 // questionText.textContent=questions[currentQuestionIndex].question
 // var answerChoice1 = document.createElement("button");
