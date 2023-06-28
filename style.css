@@ -76,7 +76,7 @@ span {
   left: 40%;
 }
 .hide {
-  display: none;
+  /* display: none; */
 }
 button {
   font-size: large;
@@ -156,11 +156,11 @@ p {
   color: #fc0404;
 }
 #days {
-  display: none;
+  /* display: none; */
 }
 #hours {
-  display: none;
+  /* display: none; */
 }
 #mins {
-  display: none;
+  /* display: none; */
 }

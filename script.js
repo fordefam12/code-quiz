@@ -65,64 +65,66 @@ choiceList.addEventListener("click", function(event){
 var element =event.target;
 
 if (element.matches("button")){
+  event.stopImmediatePropagation();
   console.log(event.target.textContent);
   currentQuestionIndex++
-  console.log(currentQuestionIndex);
+  // console.log(currentQuestionIndex);
+  function nextQ(currentQuestionIndex) {
+    console.log(`currentQuestionIndex in nexQ`, currentQuestionIndex);
+ 
+    return event.target
+}
+nextQ(currentQuestionIndex);
 }
 
 })
-
-
+// choiceList.addEventListener("click", function (event) {
+//   // event.stopPropagation()
+//   event.stopImmediatePropagation();
+//   var element = event.target;
+//   // console.log(element);
+//   console.log(element.textContent);
+//   // console.log(questionText[currentQuestionIndex].answers);
+//   if (element.textContent === element[currentQuestionIndex].answers) {
+//       console.log('Correct!');
+//       currentQuestionIndex++;
+//       nextQ(currentQuestionIndex);
+//   } else {
+//       console.log('Incorrect!');
+//       currentQuestionIndex++;
+//       nextQ(currentQuestionIndex);
+//   }
+//   })
 
 
 
 // The data/time we want to countdown to
-var countDownDate = new Date("Jul 25, 2023 00:00:52").getTime()
+var countDownDate = new Date("jul 27, 2023 :06").getTime()
 // Run myfunc every second
 var myfunc = setInterval(function () {
   var now = new Date().getTime();
   var timeValue = countDownDate - now;
-
-  // Calculating the days, hours, minutes and seconds left
-  //  var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
-  //  var hours = Math.floor((timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60));
-  //  var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
-  //  var seconds = Math.floor((timeValue % (1080 * 60)) / 1000);
-  var days = Math.floor(timeValue / (10000 * 6000 * 6000 * 24));
-  var hours = Math.floor(
-    (timeValue % (100 * 60 * 60 * 24)) / (10000 * 60 * 60)
-  );
-  var minutes = Math.floor((timeValue % (10 * 60 * 60)) / (10000 * 60));
-  var seconds = Math.floor((timeValue % (110 * 60)) / 1000);
+  var seconds = Math.floor((timeValue % (1100 * 60)) / 1000);
   // Result is output to the specific element
-  document.getElementById("days").innerHTML = days + "d ";
-  document.getElementById("hours").innerHTML = hours + "h ";
-  document.getElementById("mins").innerHTML = minutes + "m ";
+
   document.getElementById("secs").innerHTML = seconds + "s ";
 
   // Display the message when countdown is over
   if (timeValue === 0) {
     clearInterval(myfunc);
-    document.getElementById("days").innerHTML = "";
-    document.getElementById("hours").innerHTML = "";
-    document.getElementById("mins").innerHTML = "";
-    document.getElementById("secs").innerHTML = "";
     document.getElementById("end").innerHTML = "TIME UP!!";
+
   }
 
-  // punimnet for incorrect answers
-  // if (count > 0) {
-  //   count--;
-  //   counter.textContent = count;
-  //   localStorage.setItem("count", count);
-  // }
+  if (timeValue< 0) {
+    timeValue--;
+    timeValue.textContent = timeValue;
+    localStorage.setItem("timer",JSON.stringify(seconds));}
+    console.log(seconds);
+ 
 }, 1000);
 
-  if (count > 0) {
-    count--;
-    counter.textContent = count;
-    localStorage.setItem("count", count);
-  }
+  
 
 //  console.log( countDownDate);
 // const start_btn = document.querySelector(".start");
