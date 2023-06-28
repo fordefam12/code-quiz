@@ -44,7 +44,7 @@ var correctAnswers;
 var quizOver = false;
 var iSelectedAnswer = [];
 var c = quizTime/2;
-var incorrect = [currentQuestion].choices;
+// var incorrect = [currentQuestion].choices;
 var queCount = 0;
 var queNum = 1;
 var UserScores = 0;
@@ -120,13 +120,13 @@ choiceList.addEventListener(
     event.target;
     if (event.target.matches("button")) {
       // if i pick the right answer
-      if (event.target && correctAnswers) {
-        c;
+      if (event.target.textContent === correctAnswers) {
+        score+=0;
         currentQuestion++;
       showQuestions(currentQuestion);
       }
-      else if (event.target === correctAnswers) {
-        c;
+      else  {
+        quizTime -=10
         currentQuestion++;
       showQuestions(currentQuestion);
       }
@@ -137,7 +137,7 @@ choiceList.addEventListener(
       if (event.target && correctAnswers===false)
       quizTime -= c;
       console.log(c);
-      console.log(incorrect);
+      // console.log(incorrect);
       console.log(correctAnswers);
       console.log(event.target);
     }
