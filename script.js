@@ -1,54 +1,45 @@
-var questions = [
-  {
-    question: "1.is coding fun ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "2.whast your favorite movie ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "3. forvaorite vacation ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "4.are you a coder ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "5.how dedicated are you ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "6.how dedicated are you ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "7.how dedicated are you ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "8.how dedicated are you ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "9.how dedicated are you ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  },
-  {
-    question: "10.how dedicated are you ?",
-    answers: ["yes", "no", "maybe", "whateva"],
-    correct: 1
-  }];
+var questions = [{
+  question: "1. How do you write 'Hello World' in an alert box?",
+  choices: ["msg('Hello World')", "msgBox('Hello World');", "alertBox('Hello World');", "alert('Hello World');"],
+  correctAnswer: 3
+}, {
+  question: "2. How to empty an array in JavaScript?",
+  choices: ["arrayList[]", "arrayList(0)", "arrayList.length=0", "arrayList.len(0)"],
+  correctAnswer: 2
+}, {
+  question: "3. What function to add an element at the begining of an array and one at the end?",
+  choices: ["push,unshift", "unshift,push", "first,push", "unshift,last"],
+  correctAnswer: 1
+}, {
+  question: "4. What will this output? let a = [1, 2, 3]; console.log(a[6]);",
+  choices: ["undefined", "0", "prints nothing", "Syntax error"],
+  correctAnswer: 0
+}, {
+  question: "5. What would following code return? console.log(typeof typeof 1);",
+  choices: ["string", "number", "Syntax error", "undefined"],
+  correctAnswer: 0
+},{
+question: "6. Which software company developed JavaScript?",
+  choices: ["Mozilla", "Netscape", "Sun Microsystems", "Oracle"],
+  correctAnswer: 1
+},{
+question: "7. What would be the result of 3+2+'7'?",
+  choices: ["327", "12", "14", "57"],
+  correctAnswer: 3
+},{
+question: "8. Look at the following selector: $('div'). What does it select?",
+  choices: ["The first div element", "The last div element", "All div elements", "Current div element"],
+  correctAnswer: 2
+},{
+question: "9. How can a value be appended to an array?",
+  options: ["arr(length).value;", "arr[arr.length]=value;", "arr[]=add(value);", "None of these"],
+  correctAnswer: 1
+},{
+question: "10. What will the code below output to the console? console.log(1 +  +'2' + '2');",
+  choices: ["'32'", "'122'", "'13'", "'14'"],
+  correctAnswer: 0
+}];
+
 var currentQuestion = 0;
 var viewingAns = 0;
 var correctAnswers = 0;
@@ -56,104 +47,26 @@ var quizOver = false;
 var iSelectedAnswer = [];
 var c=180;
 var t;
-$(document).ready(function () {
-  // first question
-  displayCurrentQuestion();
-  $(this).find('.prebutton').attr('disabled',"disabled");
-
-  timedCount();
-  $(this).find('prebutton').on ("click", function(){
-
-    if (!quizOver){
-      if (currentQuestion == 0) {return false;}
-        if(currentQuestion == 1){
-          $(".preButton").attr('disabled', 'disabled');
-        }currentQuestion--;
-        if (currentQuestion < questions.length){
-          displayCurrentQuestion();
-        }
-    }
-    else {
-      if (viewingAns == 3) {return false;}
-      currentQuestion = 0; viewingAns = 3;
-      viewResults();
-    }
-  });
-
-    $(this).find(".nextButton").on("click", function(){
-      if (!quizOver)
-    {
-    var val = $("input[type='radio']:checked").val();
-    if (val == undefined)
-    {
-    $(document).find(".quizMessage").text("please choose an answer");
-    $(document).find("quizMessage").show();
-    }
-    else{
-      $(document).find("quizMessage").hide();
-      if (val == questions[currentQuestion].correctAnswer)
-      {
-      currentQuestion++;
-    } 
-    iSelectedAnswer[currentQuestion]= val;
-      currentQuestion++;
-      if (currentQuestion >= 1){
-        $('.preButton').prop("disabled" , false);
-      } 
-      if (currentQuestion < questions.length){
-          displayCurrentQuestion();
-      }
-      else{
-        displayScore();
-        $('#iTimeShow').html('Quiz Completed!');
-        $('#timer').html("you scored:" + correctAnswers + "out of:" +questions.length);
-        c=185;
-        $(document).find(".preButton").text("view Answer");
-        $(document).find(".nextButton").text("play Again");
-        quizOver =true;
-        return false;
-      } 
-  }
+//selecting all required elements
+const start_btn = document.querySelector(".start_btn button");
+const info_box = document.querySelector(".info_box");
+const exit_btn = info_box.querySelector(".buttons .quit");
+const continue_btn = info_box.querySelector(".buttons .restart");
+const quiz_box = document.querySelector(".quiz_box");
+const result_box = document.querySelector(".result_box");
+const option_list = document.querySelector(".option_list");
+const time_line = document.querySelector("header .time_line");
+const timeText = document.querySelector(".timer .time_left_txt");
+const timeCount = document.querySelector(".timer .timer_sec");
+// if startQuiz button clicked
+start_btn.onclick = ()=>{
+    info_box.classList.add("activeInfo"); //show info box
 }
-else{
-  quizOver= false; $('#iTimeShow').html('Time Remaining');
-  iSelectedAnswer=[];
-  $(document),find('.nextButton').text("Next Question");
-  $(document),find('.preButton').text("Previous Question");
-  $(".preButton").attr('disabled', 'disabled');
-  resetQuiz();
-  viewingAns = 1;
-  displayCurrentQuestion();
-  hideSore();
+// if exitQuiz button clicked
+exit_btn.onclick = ()=>{
+    info_box.classList.remove("activeInfo"); //hide info box
 }
-});
-//  creating timer
-function timedCount() {
-  if(c==185)
-  {return false;}
-  var hours =parseInt(c/3600) % 24;
-  var minutes = parseInt(c / 60) % 60;
-  var seconds = c % 60
-  var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? "0" + seconds : seconds);
-  $('#timer').html(result);
-  if (c==0)
-  {
-    displayScore();
-      $('#iTimeShow').html('quiz completed!');
-      $('#timer').html("you scored: " + correctAnswers + "out of: " + questions.length);
-      c=185;
-      $(document).find(".preButton").text("view Answer");
-      $(document).find("nextButton").text("play again ?")
-      quizOver = true;
-      return false;
-  }
-c=c-1
-t= setTimeout(function(){
-  timedCount()
-}, 1000);
-}
-function displayCurrentQuestion()
-});
+
 // questionText.textContent=questions[currentQuestionIndex].question
 // var answerChoice1 = document.createElement("button");
 // var answerChoice2 = document.createElement("button");

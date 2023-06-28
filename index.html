@@ -9,45 +9,48 @@
   <body>
     <!-- need to add add timer -->
     <header class="quizContainer">
-        <h1 class="timer"></h1>
-        <span id="iTimeShow"></span>
-        <button class="view-highscores" id="view">view high scores</button>
+        <h1 class="timer">   <p class="days"></p>
+          <p class="time_left_txt"></p>
+          <p class="timer_sec"></p>
+          <p class="timer">Time Left</p>
+          <p class="time_line"></p>
+          <h2 class="end"></h2></h1>
+        <span class="iTimeShow"></span>
+        <button class="view-highscores" class="view">view high scores</button>
     
         <div class="grade">
-        <span id="user-score">0</span>
-        <span id="total-score">/ 5</span>
+        <span class="user-score">0</span>
+        <span class="total-score">/ 5</span>
        
     </header>
     <!-- create contrast border -->
     <main class="border">
-          <h2>quiz</h2>
+          <h2>QUIZ</h2>
 
-      <article class="insides" ">
-        <h2 id="question"></h2>
+      <article class="insclasses" ">
+        <h2 class="que_text"></h2>
         <ul class="choiceList"></ul>
-        <button id="NextQuestion"></button>
+        <button class="NextQuestion">next</button>
         
       </article>
       <!-- capitolize text later -->
       <section class="controls">
+
         <!-- color button labels -->
-        <button class="restart" id="start-over">restart</button>
+        <button class="restart" class="start-over">restart</button>
         <button class="start">start</button>
-        <button class="goBack" id="back">back</button>
+        <button class="goBack" class="back">back</button>
         <figure class="quizMessage"> </figure>
-        <button class="clear-highscores" id="clear">clear high scores</button>
-        <button class="submit" id="view">submit</button>
-        <figure class="result"></figure>
-        <button class="preQuestion"></button>
-        <button class="nextQuestion"></button>
+        <button class="clear-highscores" class="clear">clear high scores</button>
+        <button class="submit" class="view">submit</button>
+        <figure class="result_box"></figure>
+        <button class="preButton">prev</button>
+        <button class="nextButton">next</button>
+
       </section>
+      <div class="total_que"></div>
     </main>
-    <p id="days"></p>
-    <p id="hours"></p>
-    <p id="mins"></p>
-    <p>Time Left</p>
-    <p id="secs"></p>
-    <h2 id="end"></h2>
+ 
     <script src="./script.js"></script>
   </body>
 </html>
