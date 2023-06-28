@@ -65,37 +65,43 @@ $(document).ready(function () {
   $(this).find('prebutton').on ("click", function(){
 
     if (!quizOver){
-      if (currentQuestion==0) {return false;}
-        if(currentQuestion==1){
+      if (currentQuestion == 0) {return false;}
+        if(currentQuestion == 1){
           $(".preButton").attr('disabled', 'disabled');
         }currentQuestion--;
-        if (currentQuestion<questions.length){
+        if (currentQuestion < questions.length){
           displayCurrentQuestion();
         }
     }
     else {
-      if (viewingAns==3) {return false;}
+      if (viewingAns == 3) {return false;}
       currentQuestion = 0; viewingAns = 3;
       viewResults();
     }
+  });
+
     $(this).find(".nextButton").on("click", function(){
       if (!quizOver)
-    }
+    {
     var val = $("input[type='radio']:checked").val();
     if (val == undefined)
     {
     $(document).find(".quizMessage").text("please choose an answer");
+    $(document).find("quizMessage").show();
     }
     else{
       $(document).find("quizMessage").hide();
+      if (val == questions[currentQuestion].correctAnswer)
+      {
       currentQuestion++;
-    } iSelectedAnswer[currentQuestion]= val;
+    } 
+    iSelectedAnswer[currentQuestion]= val;
       currentQuestion++;
       if (currentQuestion >= 1){
         $('.preButton').prop("disabled" , false);
       } 
       if (currentQuestion < questions.length){
-          displayCurrentQuestion(;)
+          displayCurrentQuestion();
       }
       else{
         displayScore();
@@ -103,14 +109,26 @@ $(document).ready(function () {
         $('#timer').html("you scored:" + correctAnswers + "out of:" +questions.length);
         c=185;
         $(document).find(".preButton").text("view Answer");
+        $(document).find(".nextButton").text("play Again");
         quizOver =true;
         return false;
       } 
   }
 }
-);
+else{
+  quizOver= false; $('#iTimeShow').html('Time Remaining');
+  iSelectedAnswer=[];
+  $(document),find('.nextButton').text("Next Question");
+  $(document),find('.preButton').text("Previous Question");
+  $(".preButton").attr('disabled', 'disabled');
+  resetQuiz();
+  viewingAns = 1;
+  displayCurrentQuestion();
+  hideSore();
+}
+});
 
-})
+});
 // questionText.textContent=questions[currentQuestionIndex].question
 // var answerChoice1 = document.createElement("button");
 // var answerChoice2 = document.createElement("button");
