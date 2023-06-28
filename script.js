@@ -92,11 +92,23 @@ $(document).ready(function () {
     } iSelectedAnswer[currentQuestion]= val;
       currentQuestion++;
       if (currentQuestion >= 1){
-        
-      } questions.length){
-
-      } )
-  });
+        $('.preButton').prop("disabled" , false);
+      } 
+      if (currentQuestion < questions.length){
+          displayCurrentQuestion(;)
+      }
+      else{
+        displayScore();
+        $('#iTimeShow').html('Quiz Completed!');
+        $('#timer').html("you scored:" + correctAnswers + "out of:" +questions.length);
+        c=185;
+        $(document).find(".preButton").text("view Answer");
+        quizOver =true;
+        return false;
+      } 
+  }
+}
+);
 
 })
 // questionText.textContent=questions[currentQuestionIndex].question
