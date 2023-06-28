@@ -131,8 +131,28 @@ else{
 function timedCount() {
   if(c==185)
   {return false;}
-  var 
+  var hours =parseInt(c/3600) % 24;
+  var minutes = parseInt(c / 60) % 60;
+  var seconds = c % 60
+  var result = (hours < 10 ? "0" + hours : hours) + ":" + (minutes < 10 ? '0' + minutes : minutes) + ':' + (seconds < 10 ? "0" + seconds : seconds);
+  $('#timer').html(result);
+  if (c==0)
+  {
+    displayScore();
+      $('#iTimeShow').html('quiz completed!');
+      $('#timer').html("you scored: " + correctAnswers + "out of: " + questions.length);
+      c=185;
+      $(document).find(".preButton").text("view Answer");
+      $(document).find("nextButton").text("play again ?")
+      quizOver = true;
+      return false;
+  }
+c=c-1
+t= setTimeout(function(){
+  timedCount()
+}, 1000);
 }
+function displayCurrentQuestion()
 });
 // questionText.textContent=questions[currentQuestionIndex].question
 // var answerChoice1 = document.createElement("button");
