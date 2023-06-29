@@ -149,9 +149,9 @@ body header .timer .time_line {
 p {
   display: flex;
   font-size: 40px;
-  margin: 0px;
+  margin-top: 4px;
 
-  padding: 20px;
+  padding: 5px;
   color: #fc0404;
 }
 #days {

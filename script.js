@@ -52,7 +52,7 @@ var countDown;
 var counterLine;
 var widthValue = 0;
 var score = 0;
-var quizTime = 60;
+var quizTime = 6;
 //selecting all required elements
 const start_btn = document.querySelector(".start");
 var questionText = document.getElementById(`question`);
@@ -128,13 +128,16 @@ choiceList.addEventListener(
         showQuestions(currentQuestion);
       }
       if (quizTime < 0) {
+        localStorage.setItem("time", quizTime);
+        localStorage.setItem("score", UserScores);
         clearInterval(myTimer);
         alert("time is up");
+
       }
       if (event.target && correctAnswers === false) quizTime -= c;
       console.log(c);
       // console.log(incorrect);
-
+return start;
     }
   },
   
