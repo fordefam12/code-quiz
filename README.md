@@ -13,5 +13,6 @@ Provide a short description explaining the what, why, and how of your project. U
 URL :
 https://github.com/fordefam12/code-quiz
 
+https://fordefam12.github.io/code-quiz/
 
 ![screenshot](<C0d3 9u1z (Quiz).png>)
