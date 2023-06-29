@@ -84,10 +84,9 @@ button {
   box-shadow: 0 3px 9px -2px;
   background: #a3a3a3;
   border-radius: 9px;
-  padding: 9px;
   color: rgb(255, 255, 255);
-  margin: 6px;
   cursor: pointer;
+  margin: 1px;
 }
 button:hover {
   color: black;
@@ -148,7 +147,7 @@ body header .timer .time_line {
   padding: 1px;
 }
 p {
-  display: inline;
+  display: flex;
   font-size: 40px;
   margin: 0px;
 

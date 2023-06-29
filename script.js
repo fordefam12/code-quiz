@@ -92,6 +92,7 @@ function start() {
   showQuestions(currentQuestion);
   setTimer();
   start_btn.style.visibility = "hidden";
+  // meesage.style.visibility = "hidden"
   
 }
 start_btn.addEventListener("click", start);
@@ -146,9 +147,15 @@ choiceList.addEventListener(
 //   }
 // }
 
-function endOfQuiz(sendMessage) {
-  if (quizTime==0){
-    localStorage.setItem(UserScores)
-    prompt="your score is " + UserScores;
-  }
-}
+// function endOfQuiz() {
+//   questionText.textContent = questions[currentQuestionIndex].question;
+//   if (quizTime==0){
+//     localStorage.setItem(UserScores)
+//     localStorage
+//     prompt="your score is " + UserScores;}
+//     else if (currentQuestionIndex===currentQuestionIndex.legth) {
+//       localStorage.setItem(UserScores)
+//     prompt="your score is " + UserScores;}
+//     }
+  
+
