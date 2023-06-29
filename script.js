@@ -148,6 +148,7 @@ choiceList.addEventListener(
 
 function endOfQuiz(sendMessage) {
   if (quizTime==0){
-    localStorage.setItem()
+    localStorage.setItem(UserScores)
+    prompt="your score is " + UserScores;
   }
 }
