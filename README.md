@@ -14,5 +14,4 @@ URL :
 https://github.com/fordefam12/code-quiz
 
 
-
 ![screenshot](<C0d3 9u1z (Quiz).png>)
