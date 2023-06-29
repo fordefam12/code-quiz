@@ -43,7 +43,7 @@ var viewingAns = 0;
 var correctAnswers;
 var quizOver = false;
 var iSelectedAnswer = [];
-var c = quizTime/2;
+var c = quizTime / 2;
 // var incorrect = [currentQuestion].choices;
 var queCount = 0;
 var queNum = 1;
@@ -57,7 +57,7 @@ var quizTime = 60;
 const start_btn = document.querySelector(".start");
 var questionText = document.getElementById(`question`);
 var choiceList = document.querySelector(".choiceList");
-// const info_box = document.querySelector(".info_box");
+const meesage = document.querySelector(".message");
 // const exit_btn = info_box.querySelector(".buttons .quit");
 // const nextQuestion = document.getElementById('nextQuestion');
 // const quiz_box = document.querySelector(".quiz_box");
@@ -80,28 +80,22 @@ function showQuestions(currentQuestionIndex) {
   answerChoice2.textContent = questions[currentQuestionIndex].choices[1];
   answerChoice3.textContent = questions[currentQuestionIndex].choices[2];
   answerChoice4.textContent = questions[currentQuestionIndex].choices[3];
-  // correctanswerChoice1.textContent = questions[currentQuestionIndex[2]]
-  // correctanswerChoice2.textContent = questions[currentQuestionIndex].correctAnswer;
-  // correctanswerChoice3.textContent = questions[currentQuestionIndex].correctAnswer;
-  // correctanswerChoice4.textContent = questions[currentQuestionIndex].correctAnswer;
-  // correctanswerChoice4.textContent = questions[currentQuestionIndex].correctAnswer;
+
   choiceList.appendChild(answerChoice1);
   choiceList.appendChild(answerChoice2);
   choiceList.appendChild(answerChoice3);
   choiceList.appendChild(answerChoice4);
-  correctAnswers= questions[currentQuestionIndex].correctAnswer;
-  // console.log(correctAnswers);
+  correctAnswers = questions[currentQuestionIndex].correctAnswer;
 }
 
 function start() {
   showQuestions(currentQuestion);
   setTimer();
   start_btn.style.visibility = "hidden";
+  
 }
 start_btn.addEventListener("click", start);
-// The data/time we want to countdown to
 
-// Run myfunc every second
 function setTimer() {
   var myTimer = setInterval(function () {
     quizTime--;
@@ -109,8 +103,6 @@ function setTimer() {
     if (quizTime <= 0) {
       clearInterval(myTimer);
     }
-    
-    // console.log(quizTime);
   }, 1000);
 }
 
@@ -121,40 +113,41 @@ choiceList.addEventListener(
     if (event.target.matches("button")) {
       // if i pick the right answer
       if (event.target.textContent === correctAnswers) {
-        score+=0;
+        score += 0;
+        UserScores += 50;
+        console.log(UserScores);
+        console.log(correctAnswers);
+        console.log(event.target);
         currentQuestion++;
-      showQuestions(currentQuestion);
-      }
-      else  {
-        quizTime -=10
+        showQuestions(currentQuestion);
+
+      } else {
+        quizTime -= 10;
         currentQuestion++;
-      showQuestions(currentQuestion);
+        showQuestions(currentQuestion);
       }
       if (quizTime < 0) {
         clearInterval(myTimer);
         alert("time is up");
       }
-      if (event.target && correctAnswers===false)
-      quizTime -= c;
+      if (event.target && correctAnswers === false) quizTime -= c;
       console.log(c);
       // console.log(incorrect);
-      console.log(correctAnswers);
-      console.log(event.target);
+
     }
-  },1000);
+  },
+  
+);
 
-
-
-
-function nextQuestion() {
-  document.addEventListener("click", choiceList);
-  for (var i = 0; i < choices.length; i++) {
-    const choiceList = choices[i++];
-  }
-}
-
-// function endOfQuiz(sendMessage) {
-//   if (quizTime==0){
-//     localStorage.setItem()
+// function nextQuestion() {
+//   document.addEventListener("click", choiceList);
+//   for (var i = 0; i < choices.length; i++) {
+//     const choiceList = choices[i++];
 //   }
 // }
+
+function endOfQuiz(sendMessage) {
+  if (quizTime==0){
+    localStorage.setItem()
+  }
+}
