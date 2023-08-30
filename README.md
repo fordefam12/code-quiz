@@ -12,7 +12,7 @@ Provide a short description explaining the what, why, and how of your project. U
 
 URL :
 https://github.com/fordefam12/code-quiz
-
+![Alt text](<qr-code (14).png>)
 https://fordefam12.github.io/code-quiz/
-
+![Alt text](codeQuizLogo.png)
 ![screenshot](<C0d3 9u1z (Quiz).png>)
