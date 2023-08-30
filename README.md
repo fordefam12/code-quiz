@@ -1,18 +1,72 @@
-# code-quizGIVEN I am taking a code quiz
+
+# Code Quiz
+
+<p align='center'>
+<a href='https://github.com/fordefam12'><img src='./codeQuizLogo.png'height='20%' width="20%"></a>
+</p>
+
 
 ## Description
 
-Provide a short description explaining the what, why, and how of your project. Use the following questions as a guide:
-
-- i wanted to assist other new devolopers in their coding knowlegde.
-- i built this project to test a persons knowledge on coding.
-- this quiz can help a person learn through on th espot thinking due the the time punishment aspect of the test.
-- i learn how to set timer intervals.
+ i wanted to assist other new devolopers in their coding knowlegde so i built this project to test a persons knowledge on coding.
 
 
-URL :
-https://github.com/fordefam12/code-quiz
-![Alt text](<qr-code (14).png>)
-https://fordefam12.github.io/code-quiz/
-![Alt text](codeQuizLogo.png)
+
+## Table of Contents
+*[Title](#title)
+
+*[Description](#description)
+    
+*[Installation](#installation)
+    
+*[Usage](#usage)
+    
+*[License](#license)
+    
+    
+*[Questions](#questions)
+
+*[URL](#URL)
+    
+
+## Installation
+
+open Html in your web browser
+
+## Usage
+
+this quiz can help a person learn through on th espot thinking due the the time punishment aspect of the test.
+
+## License
+[![License: The_Unlicense](https://img.shields.io/badge/License-The_Unlicense-brightgreen.svg)](https://opensource.org/licenses/The_Unlicense)
+
+
+
+
+## badges
+
+![JavaScript:](https://img.shields.io/badge/JavaScript-50.4%25-blue)
+             ![HTML:](https://img.shields.io/badge/HTML-21.1%25-red)
+             ![CSS:](https://img.shields.io/badge/CSS-28.8%25-purple)
+
+
+<p align='center'>
+<a><img src="https://github-readme-stats.vercel.app/api?username=fordefam12&show_icons=true&theme=transparent" alt="fordefam12's github stats"></a>
+<a><img src="https://github-readme-stats.vercel.app/api/top-langs/?username=fordefam12&layout=compact" height ="20%" width= "27%"></a>
+</p>
+
+
+## Questions
+Any questions about this project please send me a message on *https://github.com/fordefam12 or email me at [fordefam12@gmail.com]
+
+## URL
+  
+<p align='center'>
+<a href='https://github.com/fordefam12/code-quiz'>
+CLICK QR CODE for deploy link
+// <img src='./qr-code (14).png' width="25%"></a>
+</p>
+
+## Screenshots
+
 ![screenshot](<C0d3 9u1z (Quiz).png>)
