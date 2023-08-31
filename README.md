@@ -62,7 +62,7 @@ Any questions about this project please send me a message on *https://github.com
 ## URL
   
 <p align='center'>
-<a href='https://github.com/fordefam12/code-quiz'>
+<a href='https://fordefam12.github.io/code-quiz/'>
 CLICK QR CODE for deploy link
 // <img src='./qr-code (14).png' width="25%"></a>
 </p>
